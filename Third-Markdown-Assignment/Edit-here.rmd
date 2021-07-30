@@ -92,15 +92,47 @@ boxplot(Data$Rain)
 Zo = (Drymean-Wetmean) / sqrt(((DrySD^2)/18)+((WetSD^2)/18))
 ```
 
-Zo = 2.990076
-```{r}
-1-pnorm(Zo)
+    Zo = 2.990076
+```{r, echo=FALSE}
+Zo1 <- 1-pnorm(Zo)
 ```
-P(2.990076) = 0.001394542
+    P(2.990076) = 0.001394542
 
-0.001394542 < 0.025
+    0.001394542 < 0.025
+```{r, echo=FALSE}
+x = 2.990076
+sd = 1
+u = 0
+a = 2.110
+a1 = -2.110
+b = 0
 
-We reject Ho
+Value = seq(u-4*sd, u+4*sd, 0.01)
+Density = dnorm(Value, u, sd)
+plot(Value, Density, main =, type='l', ylim=c(0, max(Density)+0.01), axes=FALSE)
+axis(1, at = seq(u-3*sd, u+3*sd, sd))
+
+cord.a = c(0, seq(min(Value), a, 0.01), a)
+cord.b = c(0, dnorm(seq(min(Value), a, 0.01), u, sd), 0)
+polygon(cord.a, cord.b, col="White")
+
+cord.g = c(0, seq(min(Value), a1, 0.01), a1)
+cord.h = c(0, dnorm(seq(min(Value), a1, 0.01), u, sd), 0)
+polygon(cord.g, cord.h, col="BLue")
+
+cord.e = c(a, seq(a,max(Value),0.01),b)
+cord.f = c(0,dnorm(seq(a,max(Value),0.01),u,sd),0 )
+polygon(cord.e, cord.f, col = "Blue")
+
+cord.c = c(x, seq(x,max(Value),0.01),b)
+cord.d = c(0,dnorm(seq(x,max(Value),0.01),u,sd),0 )
+polygon(cord.c, cord.d, col = "Red")
+
+
+```
+
+
+#### We reject Ho
 
 ### Discussions
 
