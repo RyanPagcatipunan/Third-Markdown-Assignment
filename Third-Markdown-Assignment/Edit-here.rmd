@@ -1,8 +1,32 @@
 ## Third Markdown Assignmennt
+```{r setup, include = FALSE}
+
+  library(ggplot2)
+  library(tidyverse)
+  library(data.table)
+
+
+  knitr::opts_chunk$set(
+    error = TRUE,
+    fig.align = 'center' ,
+    out.width = "90%" ,
+    warning = FALSE,
+    message = FALSE,
+    
+    size = "small" ,
+    tidy = FALSE
+  )
+```
 
 
 ### Intro
 
+[ Hypothesis testing
+    
+    Ho: μ1 = μ2
+    H1: μ1 ≠ μ2
+    
+    α = 0.05] I dont know where to put this
 
 
 
@@ -17,14 +41,73 @@ It is possible that dry weather increases the amount of accidents or by other me
 
 
 ### Results
+```{r, echo=FALSE}
+Data <- read.csv("Rain,Dry,fatalities.csv")
 
+print(Data)
+```
+#### Dry season fatalities
+```{r, echo=FALSE}
+Drymean <- mean(Data$Dry)
+DrySD <- sqrt(var(Data$Dry))
 
+```
+    μ = 214.8333
+    σ = 293.2388
+```{r, echo=FALSE}
+Value = seq(Drymean-4*DrySD, Drymean+4*DrySD, 0.01)
+Density = dnorm(Value, Drymean, DrySD)
+plot(Value, Density, main =, type='l', ylim=c(0, max(Density)+0.01), axes=FALSE)
+axis(1, at = seq(Drymean-3*DrySD, Drymean+3*DrySD, DrySD))
+boxplot(Data$Dry)
+```
+
+#### Wet season fatalities
+```{r, echo=FALSE}
+Wetmean <- mean(Data$Rain)
+WetSD <- sqrt(var(Data$Rain))
+
+```
+    μ = 8
+    σ = 11.83216
+```{r, echo=FALSE}
+Value = seq(Wetmean-4*WetSD, Wetmean+4*WetSD, 0.01)
+Density = dnorm(Value, Wetmean, WetSD)
+plot(Value, Density, main =, type='l', ylim=c(0, max(Density)+0.01), axes=FALSE)
+axis(1, at = seq(Wetmean-3*WetSD, Wetmean+3*WetSD, WetSD))
+boxplot(Data$Rain)
+```
+
+#### Hypothesis testing
+    Ho: μ1 = μ2
+    H1: μ1 ≠ μ2
+    α = 0.05
+    
+    Zo = μ1 - μ2
+        ---------
+       σ1^2   σ2^2
+     √(---- + ----)
+        n1     n2
+```{r, echo=FALSE}
+Zo = (Drymean-Wetmean) / sqrt(((DrySD^2)/18)+((WetSD^2)/18))
+```
+
+Zo = 2.990076
+```{r}
+1-pnorm(Zo)
+```
+P(2.990076) = 0.001394542
+
+0.001394542 < 0.025
+
+We reject Ho
 
 ### Discussions
 
-
+There is a significant difference between the fatalities that happened in the rain and in the dry season
 
 ### Conclusion
 
+Although the difference is not what you would expect because there is a lot more fatalities in the dry season rather than the rain. The reason behind this could be that no is riding there motorcycles when it is raining and that they are only riding it when the sun is out.
 
 
