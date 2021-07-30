@@ -1,0 +1,30 @@
+## Third Markdown Assignmennt
+
+
+### Intro
+
+
+
+
+### Methodology
+The data was taken from the CARE database of the year 2008. The CARE database is a database made by the European Union (EU) with the goal of identifying and quantifying the safety and road problems within the EU, evaluating how effective road measures are, determine how relevant the actions of the community are and to help exchange experience within this field
+This database is different from other databases because it records the specific weather conditions, type of vehicle and when the accident occurred. 
+These types of data are important because knowing how the accident happened could possibly prevent it from happening.
+The data of the CARE database is collected by each member of the EU and allows the flexibility of analyzing the information.
+This data is used in this research to determine the correlation of weather and motorcycle accidents.
+It shows within the data that the harshness wet weather does not affect how many accidents happen concerning motorcycles
+It is possible that dry weather increases the amount of accidents or by other means such as collisions with other cars and not a direct correlation with weather
+
+
+### Results
+
+
+
+### Discussions
+
+
+
+### Conclusion
+
+
+
