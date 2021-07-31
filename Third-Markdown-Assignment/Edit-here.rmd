@@ -52,8 +52,8 @@ Drymean <- mean(Data$Dry)
 DrySD <- sqrt(var(Data$Dry))
 
 ```
-    μ = 214.8333
-    σ = 293.2388
+$\mu = 214.8333$  
+$\sigma = 293.2388$
 ```{r, echo=FALSE}
 Value = seq(Drymean-4*DrySD, Drymean+4*DrySD, 0.01)
 Density = dnorm(Value, Drymean, DrySD)
@@ -68,8 +68,9 @@ Wetmean <- mean(Data$Rain)
 WetSD <- sqrt(var(Data$Rain))
 
 ```
-    μ = 8
-    σ = 11.83216
+$\mu = 8$  
+&nbsp;  
+$\sigma = 11.83216$
 ```{r, echo=FALSE}
 Value = seq(Wetmean-4*WetSD, Wetmean+4*WetSD, 0.01)
 Density = dnorm(Value, Wetmean, WetSD)
@@ -79,26 +80,25 @@ boxplot(Data$Rain)
 ```
 
 #### Hypothesis testing
-    Ho: μ1 = μ2
-    H1: μ1 ≠ μ2
-    α = 0.05
+$H_0: μ_1 = μ_2$  
+&nbsp;  
+$H1: μ_1 ≠ μ_2$  
+&nbsp;  
+$α = 0.05$
     
-    Zo = μ1 - μ2
-        ---------
-       σ1^2   σ2^2
-     √(---- + ----)
-        n1     n2
+$$z_0=\frac{\mu_1-\mu_2}{\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}}$$
 ```{r, echo=FALSE}
 Zo = (Drymean-Wetmean) / sqrt(((DrySD^2)/18)+((WetSD^2)/18))
 ```
 
-    Zo = 2.990076
+$Z_0 = 2.990076$  
+&nbsp;  
 ```{r, echo=FALSE}
 Zo1 <- 1-pnorm(Zo)
 ```
-    P(2.990076) = 0.001394542
-
-    0.001394542 < 0.025
+$P(2.990076) = 0.001394542$  
+&nbsp;  
+$0.001394542 < 0.025$
 ```{r, echo=FALSE}
 x = 2.990076
 sd = 1
@@ -132,7 +132,7 @@ polygon(cord.c, cord.d, col = "Red")
 ```
 
 
-#### We reject Ho
+#### We reject $H_0$
 
 ### Discussions
 
