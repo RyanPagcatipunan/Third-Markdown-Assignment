@@ -134,7 +134,7 @@ polygon(cord.c, cord.d, col = "Red")
 
 #### We reject $H_0$
 
-    The P-value is 0.001394542, hence we reject the null hypothesis at the α = 0.05 level of confidence.
+The P-value is 0.001394542, hence we reject the null hypothesis at the α = 0.05 level of confidence.
 
 ### Discussions
 
