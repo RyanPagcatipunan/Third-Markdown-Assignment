@@ -146,3 +146,7 @@ There is a significant difference between the fatalities that happened in the we
 Although the difference is not what you would expect because there is a lot more fatalities in the dry season rather than the rain. The reason behind this could be that no is riding there motorcycles when it is raining and that they are only riding it when the sun is out. Motorcycle riders could also be more cautious when driving in more precarious weather conditions than dry conditions, explaining the large difference in fatalities between rainy and dry weather conditions.
 
 
+Source:
+
+Winkelbauer, M., Brandstätter, C., Riegler, S., Steinacker, R., &amp; Tiefgraber, M. (2010). How motorcycle collisions depend on weather. Advances in Intelligent and Soft Computing, 95–106. https://doi.org/10.1007/978-3-642-15503-1_9 
+
