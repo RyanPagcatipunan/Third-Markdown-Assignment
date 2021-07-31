@@ -21,12 +21,12 @@
 
 ### Intro
 
-[ Hypothesis testing
-    
-    Ho: μ1 = μ2
-    H1: μ1 ≠ μ2
-    
-    α = 0.05] I dont know where to put this
+  Weather conditions greatly change the environment of the driver to the point where even a great driver can incur fatal injuries if they are not wary of the weather. Precipitation is one of the common forms of weather and is also one of the largest factors in the safety of motorcycle riders. This study was conducted to determine the correlation between weather conditions and the number of fatalities among motorcycle riders. 
+
+$H_0: \mu_{rainy}=mu_{dry}$
+$H_1: \mu_{rainy}\neq\mu_{dry}$
+
+at $\alpha=0.05$
 
 
 
@@ -140,6 +140,6 @@ There is a significant difference between the fatalities that happened in the ra
 
 ### Conclusion
 
-Although the difference is not what you would expect because there is a lot more fatalities in the dry season rather than the rain. The reason behind this could be that no is riding there motorcycles when it is raining and that they are only riding it when the sun is out.
+Although the difference is not what you would expect because there is a lot more fatalities in the dry season rather than the rain. The reason behind this could be that no is riding there motorcycles when it is raining and that they are only riding it when the sun is out. Motorcycle riders could also be more cautious when driving in more precarious weather conditions than dry conditions, explaining the large difference in fatalities between rainy and dry weather conditions.
 
 
