@@ -21,16 +21,23 @@
 
 ### Intro
 
-  Hypothesis testing
-    
-    Ho: μ1 = μ2
-    H1: μ1 ≠ μ2
-    
-    α = 0.05 
+  Weather conditions greatly change the environment of the driver to the point where even a great driver can incur fatal injuries if they are not wary of the weather. Precipitation is one of the common forms of weather and is also one of the largest factors in the safety of motorcycle riders. This study was conducted to determine the correlation between weather conditions and the number of fatalities among motorcycle riders. 
+
+$H_0: \mu_{rainy}=mu_{dry}$
+$H_1: \mu_{rainy}\neq\mu_{dry}$
+
+at $\alpha=0.05$
+
 
 
 ### Methodology
-The data was taken from the CARE database of the year 2008. The CARE database is a database made by the European Union (EU) with the goal of identifying and quantifying the safety and road problems within the EU, evaluating how effective road measures are, determine how relevant the actions of the community are and to help exchange experience within this field. This database is different from other databases because it records the specific weather conditions, type of vehicle and when the accident occurred. These types of data are important because knowing how the accident happened could possibly prevent it from happening. The data of the CARE database is collected by each member of the EU and allows the flexibility of analyzing the information. This data is used in this research to determine the correlation of weather and motorcycle accidents. It shows within the data that the harshness wet weather does not affect how many accidents happen concerning motorcycles. It is possible that dry weather increases the amount of accidents or by other means such as collisions with other cars and not a direct correlation with weather
+The data was taken from the CARE database of the year 2008. The CARE database is a database made by the European Union (EU) with the goal of identifying and quantifying the safety and road problems within the EU, evaluating how effective road measures are, determine how relevant the actions of the community are and to help exchange experience within this field
+This database is different from other databases because it records the specific weather conditions, type of vehicle and when the accident occurred. 
+These types of data are important because knowing how the accident happened could possibly prevent it from happening.
+The data of the CARE database is collected by each member of the EU and allows the flexibility of analyzing the information.
+This data is used in this research to determine the correlation of weather and motorcycle accidents.
+It shows within the data that the harshness wet weather does not affect how many accidents happen concerning motorcycles
+It is possible that dry weather increases the amount of accidents or by other means such as collisions with other cars and not a direct correlation with weather
 
 
 ### Results
@@ -45,8 +52,8 @@ Drymean <- mean(Data$Dry)
 DrySD <- sqrt(var(Data$Dry))
 
 ```
-    μ = 214.8333
-    σ = 293.2388
+$\mu = 214.8333$  
+$\sigma = 293.2388$
 ```{r, echo=FALSE}
 Value = seq(Drymean-4*DrySD, Drymean+4*DrySD, 0.01)
 Density = dnorm(Value, Drymean, DrySD)
@@ -61,8 +68,9 @@ Wetmean <- mean(Data$Rain)
 WetSD <- sqrt(var(Data$Rain))
 
 ```
-    μ = 8
-    σ = 11.83216
+$\mu = 8$  
+&nbsp;  
+$\sigma = 11.83216$
 ```{r, echo=FALSE}
 Value = seq(Wetmean-4*WetSD, Wetmean+4*WetSD, 0.01)
 Density = dnorm(Value, Wetmean, WetSD)
@@ -72,26 +80,25 @@ boxplot(Data$Rain)
 ```
 
 #### Hypothesis testing
-    Ho: μ1 = μ2
-    H1: μ1 ≠ μ2
-    α = 0.05
+$H_0: μ_1 = μ_2$  
+&nbsp;  
+$H1: μ_1 ≠ μ_2$  
+&nbsp;  
+$α = 0.05$
     
-    Zo = μ1 - μ2
-        ---------
-       σ1^2   σ2^2
-     √(---- + ----)
-        n1     n2
+$$z_0=\frac{\mu_1-\mu_2}{\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}}$$
 ```{r, echo=FALSE}
 Zo = (Drymean-Wetmean) / sqrt(((DrySD^2)/18)+((WetSD^2)/18))
 ```
 
-    Zo = 2.990076
+$Z_0 = 2.990076$  
+&nbsp;  
 ```{r, echo=FALSE}
 Zo1 <- 1-pnorm(Zo)
 ```
-    P(2.990076) = 0.001394542
-
-    0.001394542 < 0.025
+$P(2.990076) = 0.001394542$  
+&nbsp;  
+$0.001394542 < 0.025$
 ```{r, echo=FALSE}
 x = 2.990076
 sd = 1
@@ -125,8 +132,8 @@ polygon(cord.c, cord.d, col = "Red")
 ```
 
 
-#### We reject Ho
-       
+#### We reject $H_0$
+
     The P-value is 0.001394542, hence we reject the null hypothesis at the α = 0.05 level of confidence.
 
 ### Discussions
@@ -136,6 +143,6 @@ There is a significant difference between the fatalities that happened in the we
 
 ### Conclusion
 
-Although the difference is not what you would expect because there is a lot more fatalities in the dry season rather than the rain. The reason behind this could be that no is riding there motorcycles when it is raining and that they are only riding it when the sun is out.
+Although the difference is not what you would expect because there is a lot more fatalities in the dry season rather than the rain. The reason behind this could be that no is riding there motorcycles when it is raining and that they are only riding it when the sun is out. Motorcycle riders could also be more cautious when driving in more precarious weather conditions than dry conditions, explaining the large difference in fatalities between rainy and dry weather conditions.
 
 
